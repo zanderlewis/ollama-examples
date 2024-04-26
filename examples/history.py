@@ -1,9 +1,11 @@
 import ollama
 import sys
 
+# Pull LLaMa3 if not already
+# ollama.pull('llama3')
 
 def get_response(message_history):
-    model_name = 'qwen:7b'
+    model_name = 'llama3'
     try:
         response = ollama.chat(model=model_name, messages=message_history, stream=False)
         received_message = response['message']
